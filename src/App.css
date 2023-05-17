@@ -1,38 +1,107 @@
+:root {
+    --vh: 100%;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-main: #0F0AEF;
+    --color-kakao: #FEE500;
+    --color-kakao-text: #191603;
+    --color-naver: #1FCB53;
+}
+
+@font-face {
+    font-family: 'GimpoBatang00';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/GimpoBatang00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 .App {
-  text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-family: 'Pretendard-Regular';
+    height: calc(var(--vh, 1vh) * 100);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Login {
+    background-color: var(--color-white);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Login-title {
+    font-family: 'GimpoBatang00';
+    text-align: left;
+    font-size: 2.5rem;
+    margin-top: 30px;
+    color: var(--color-black);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Login-title p {
+    margin: 15px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.Login-title-sub {
+    font-size: 1rem;
+    font-weight: lighter;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Login-icon {
+    width: 100%;
+    position: relative;
+}
+
+.Login-icon img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    object-position: top;
+}
+
+.Login-buttons {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 10%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.Login-buttons .kakao {
+    background-color: var(--color-kakao);
+    color: var(--color-kakao-text);
+}
+
+.Login-buttons .naver {
+    background-color: var(--color-naver);
+    color: var(--color-white);
+}
+
+.Login-buttons div {
+    width: 85%;
+    margin-left: 10px;
+}
+
+.Login-buttons button {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.95rem;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.Login-buttons button img {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: 20px;
+    position: relative;
+    top: 3px;
 }
