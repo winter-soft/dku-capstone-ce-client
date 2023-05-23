@@ -1,0 +1,42 @@
+.login {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.snsButtons {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+}
+
+.snsButton {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.snsButton img {
+    width: 20px;
+    margin-right: 35px;
+}
+
+.login .description, .login .title {
+    font-family: 'GimpoBatang00';
+}
+
+.login .title {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.loginIcon {
+    width: 100%;
+    height: 45%;
+    background-image: url("/public/img/login-icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    position: absolute;
+    bottom: 170px;
+}
