@@ -6,6 +6,10 @@
     --color-kakao: #FEE500;
     --color-kakao-text: #191603;
     --color-naver: #1FCB53;
+    --color-gray: #aeaeae;
+    --color-light-gray: #FAFAFB;
+    --color-primary: #46D96F;
+    --color-red: #FF0000;
 }
 
 @font-face {
@@ -70,4 +74,32 @@ button {
     width: 100%;
     position: absolute;
     bottom: 30px;
+}
+
+.lgTxt {
+    font-size: 2rem;
+}
+
+.mTxt {
+    font-size: 1.5rem;
+}
+
+.boldTxt {
+    font-weight: bolder;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.bottomNextBtn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 80px;
+    border-radius: 0;
+    box-sizing: border-box;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    width: 100%;
 }

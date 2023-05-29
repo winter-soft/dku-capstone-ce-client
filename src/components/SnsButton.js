@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 const SnsButton = ({type}) => {
   const isKakao = type === 'kakao';
   const buttonText = isKakao ? '카카오' : '네이버';
-  const linkPage = isKakao ? '' : '/intro';
+  const linkPage = isKakao ? '' : '/signupInfo';
 
   // TODO 1. 추후 config 파일 분리
   const REST_API_KEY = '47540ee45372a33d6c8800d07a2a6446';
