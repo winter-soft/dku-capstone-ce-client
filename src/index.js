@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Login from "./pages/Login";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import SignUpInfo from "./pages/SignUpInfo";
+import SignupInfo from "./pages/SignupInfo";
+import SignupMajor from "./pages/SignupMajor";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,7 +14,8 @@ root.render(
     <Routes>
       <Route path="/" element={<App/>}></Route>
       <Route path="login" element={<Login/>}></Route>
-      <Route path="signupInfo" element={<SignUpInfo/>}></Route>
+      <Route path="signupInfo" element={<SignupInfo/>}></Route>
+      <Route path="signupMajor" element={<SignupMajor/>}></Route>
     </Routes>
   </BrowserRouter>
 );
