@@ -119,3 +119,31 @@
     font-size: 0.8rem;
     font-weight: normal;
 }
+
+.privacy {
+    width: 100%;
+    border: 1px solid var(--color-primary);
+    box-sizing: border-box;
+    padding: 20px 30px;
+    height: 50%;
+    overflow: auto;
+    line-height: 25px;
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
+
+.toggle {
+    width: 100%;
+    display: flex;
+}
+
+.toggle .switch {
+    position: absolute;
+    right: 24px;
+    margin-top: 20px;
+}
+
+.toggleDescription {
+    display: inline-block;
+    margin-top: 27px;
+}
