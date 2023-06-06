@@ -15,8 +15,8 @@ const Main = () => {
       <Slider/>
       <RoundButton text="직무 추천 받으러 가기"/>
       <AroundJob/>
-      <InterestJob/>
-      <CurrentJob/>
+      <InterestJob title="내 관심분야에요"/>
+      <CurrentJob title="직무별로 나눠 보는 요즘 채용"/>
       <BottomMenu activeMenu="main"/>
     </div>
   );

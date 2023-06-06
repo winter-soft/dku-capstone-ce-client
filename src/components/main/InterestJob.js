@@ -3,11 +3,11 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import 'swiper/css';
 import MiniSliderImage from "./MiniSliderImage";
 
-const InterestJob = () => {
+const InterestJob = ({title}) => {
   const imgExampleUrl = 'https://webzine.kccworld.co.kr/data/cn/87/7.jpg';
   return (
     <div>
-      <p className="mainTitle">내 관심분야에요</p>
+      <p className="mainTitle">{title}</p>
       <Swiper
         slidesPerView={2}
         spaceBetween={10}

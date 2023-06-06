@@ -1,5 +1,5 @@
 import React from "react";
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 
 const Header = ({hideBackBtn}) => {
@@ -13,9 +13,8 @@ const Header = ({hideBackBtn}) => {
     <div className="header">
       <span className={`backBtn ${backBtnStyle}`} onClick={goBack}>
         <ion-icon name="chevron-back-outline"></ion-icon>
-        {/*<ion-icon name="arrow-back-outline"></ion-icon>*/}
       </span>
-      <span className="logoText">주부의 직업.</span>
+      <Link to="/main" className="logoText">주부의 직업.</Link>
       <span className="icon"><ion-icon name="notifications-outline"></ion-icon></span>
     </div>
   );
