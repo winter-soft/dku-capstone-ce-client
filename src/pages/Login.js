@@ -1,8 +1,18 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import SnsButton from "../components/common/SnsButton";
 import '../css/Login.css';
+import {kakaoLoginPage} from "../fetch";
 
 const Login = () => {
+  const [kakaoLoginPageUrl, setKakaoLoginPageUrl] = useState('');
+  useEffect(() => {
+    const fetchLoginPage = async () => {
+      const page = await kakaoLoginPage();
+      setKakaoLoginPageUrl(page.data.loginPage);
+    }
+    fetchLoginPage();
+  }, []);
+
   return (
     <div className="login">
       <p className="description">
@@ -15,8 +25,8 @@ const Login = () => {
       </p>
       <div className="loginIcon"></div>
       <div className="snsButtons">
-        <SnsButton type="kakao"/>
-        <SnsButton type="naver"/>
+        <SnsButton linkTo={kakaoLoginPageUrl} text="카카오"/>
+        <SnsButton linkTo="/signUpMajor" text="네이버"/>
       </div>
     </div>
   );
