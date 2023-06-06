@@ -17,7 +17,7 @@ const Main = () => {
       <AroundJob/>
       <InterestJob/>
       <CurrentJob/>
-      <BottomMenu/>
+      <BottomMenu activeMenu="main"/>
     </div>
   );
 };
