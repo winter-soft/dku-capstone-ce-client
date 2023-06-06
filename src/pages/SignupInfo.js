@@ -7,14 +7,16 @@ import {authenticate} from "../fetch";
 
 const SignupInfo = () => {
   const [user, setUserData] = useState();
-  
+
   useEffect(() => {
     const location = window.location;
     const queryParams = new URLSearchParams(location.search);
     const code = queryParams.get('code');
     registerCheck(code);
-  }, []);
+    // eslint-disable-next-line no-use-before-define
+  }, [registerCheck]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const registerCheck = async (code) => {
     try {
       const response = await authenticate(code);
