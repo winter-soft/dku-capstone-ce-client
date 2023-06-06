@@ -6,14 +6,14 @@ import TopText from "../components/common/TopText";
 import {authenticate} from "../fetch";
 
 const SignupInfo = () => {
-  useEffect(async () => {
+  const [user, setUserData] = useState();
+  
+  useEffect(() => {
     const location = window.location;
     const queryParams = new URLSearchParams(location.search);
     const code = queryParams.get('code');
-    await registerCheck(code);
+    registerCheck(code);
   }, []);
-
-  const [user, setUserData] = useState();
 
   const registerCheck = async (code) => {
     try {
