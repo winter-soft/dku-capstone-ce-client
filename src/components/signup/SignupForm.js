@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {getObjectBySessionStorage} from "../../common";
-import {registerAPI} from "../../fetch";
+import {registerStage1API} from "../../fetch";
 
 const SignupForm = ({data}) => {
   const user = getObjectBySessionStorage('user');
@@ -45,13 +45,6 @@ const SignupForm = ({data}) => {
       return;
     }
 
-    // 값이 모두 입력되었을 때 API 호출
-    console.log("이름:", nickName);
-    console.log("성별:", gender);
-    console.log("이메일:", email);
-    console.log("나이:", age);
-    console.log("전화번호:", phoneNumber);
-
     const updatedInputs = {
       nickName,
       gender,
@@ -62,7 +55,7 @@ const SignupForm = ({data}) => {
     };
 
     const response = async () => {
-      return await registerAPI(updatedInputs);
+      return await registerStage1API(updatedInputs);
     }
 
     response().then(data => {

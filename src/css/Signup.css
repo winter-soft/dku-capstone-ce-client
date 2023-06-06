@@ -114,9 +114,10 @@
     padding: 30px 10px;
 }
 
-.majorBtn:active, .majorBtn:focus {
+.majorBtn.active {
     border: 1px solid var(--color-primary);
-    color: var(--color-black);
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
 
 

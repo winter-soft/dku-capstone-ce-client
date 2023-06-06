@@ -2,8 +2,8 @@ import React, {useEffect} from "react";
 import '../css/Signup.css';
 import SignupForm from "../components/signup/SignupForm";
 import TopText from "../components/common/TopText";
-import {authenticate, tokenValid} from "../fetch";
-import {getObjectBySessionStorage, saveObjectToSessionStorage} from "../common";
+import {authenticate} from "../fetch";
+import {getObjectBySessionStorage, saveItemToSessionStorage, saveObjectToSessionStorage} from "../common";
 
 const SignupInfo = () => {
   useEffect(() => {
@@ -12,15 +12,17 @@ const SignupInfo = () => {
     async function fetchData() {
       const isUser = await checkSignUp(code);
       if (isUser) {
-        // 토큰 값으로 유저 정보 호출
-        const savedUser = tokenValid(getObjectBySessionStorage('user').token);
-        const user = {
-          "email": savedUser.user_email,
-          "nickName": savedUser.user_nickName,
-          "platformType": savedUser.user_platformType,
-          "role": savedUser.user_role,
-        }
-        saveObjectToSessionStorage('user', user);
+        saveItemToSessionStorage("token", getObjectBySessionStorage('user').token);
+        window.location.href = "/main";
+        // // 토큰 값으로 유저 정보 호출
+        // const savedUser = tokenValid(getObjectBySessionStorage('user').token);
+        // const user = {
+        //   "email": savedUser.user_email,
+        //   "nickName": savedUser.user_nickName,
+        //   "platformType": savedUser.user_platformType,
+        //   "role": savedUser.user_role,
+        // }
+        // saveObjectToSessionStorage('user', user);
       }
     }
 
