@@ -11,7 +11,7 @@ import CurrentJob from "../components/main/CurrentJob";
 const Main = () => {
   return (
     <div className="App">
-      <Header/>
+      <Header hideBackBtn={true}/>
       <Slider/>
       <RoundButton text="직무 추천 받으러 가기"/>
       <AroundJob/>

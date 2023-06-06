@@ -276,3 +276,14 @@ button {
 .shareButton a {
     color: var(--color-primary) !important;
 }
+
+.backBtn {
+    position: relative;
+    top: 3px;
+    font-size: 1.2rem;
+    right: 10px;
+}
+
+.displayNone {
+    display: none;
+}
