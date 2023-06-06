@@ -13,16 +13,16 @@ const InterestJob = () => {
         spaceBetween={10}
       >
         <SwiperSlide>
-          <MiniSliderImage imgUrl={imgExampleUrl} title="입주관리매니저" content="KCC 부산 센텀"/>
+          <MiniSliderImage linkTo="/job" imgUrl={imgExampleUrl} title="입주관리매니저" content="KCC 부산 센텀"/>
         </SwiperSlide>
         <SwiperSlide>
-          <MiniSliderImage imgUrl={imgExampleUrl} title="입주관리매니저" content="KCC 부산 센텀"/>
+          <MiniSliderImage linkTo="/job" imgUrl={imgExampleUrl} title="입주관리매니저" content="KCC 부산 센텀"/>
         </SwiperSlide>
         <SwiperSlide>
-          <MiniSliderImage imgUrl={imgExampleUrl} title="입주관리매니저" content="KCC 부산 센텀"/>
+          <MiniSliderImage linkTo="/job" imgUrl={imgExampleUrl} title="입주관리매니저" content="KCC 부산 센텀"/>
         </SwiperSlide>
         <SwiperSlide>
-          <MiniSliderImage imgUrl={imgExampleUrl} title="입주관리매니저" content="KCC 부산 센텀"/>
+          <MiniSliderImage linkTo="/job" imgUrl={imgExampleUrl} title="입주관리매니저" content="KCC 부산 센텀"/>
         </SwiperSlide>
       </Swiper>
     </div>

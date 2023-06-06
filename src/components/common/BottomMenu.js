@@ -2,14 +2,14 @@ import React from "react";
 import BottomMenuDetail from "./BottomMenuDetail";
 import '../../css/BottomMenu.css';
 
-const BottomMenu = () => {
+const BottomMenu = ({activeMenu}) => {
   return (
     <div className="bottomMenu">
-      <BottomMenuDetail icon="home-outline" text="홈"/>
-      <BottomMenuDetail icon="people-outline" text="채용"/>
-      <BottomMenuDetail icon="ribbon-outline" text="교육"/>
-      <BottomMenuDetail icon="reader-outline" text="히스토리"/>
-      <BottomMenuDetail icon="person-outline" text="MY"/>
+      <BottomMenuDetail linkTo="/main" icon={activeMenu === "main" ? "home" : "home-outline"} text="홈"/>
+      <BottomMenuDetail linkTo="/job" icon={activeMenu === "job" ? "people" : "people-outline"} text="채용"/>
+      <BottomMenuDetail linkTo="/education" icon={activeMenu === "education" ? "ribbon" : "ribbon-outline"} text="교육"/>
+      <BottomMenuDetail linkTo="/history" icon={activeMenu === "history" ? "reader" : "reader-outline"} text="히스토리"/>
+      <BottomMenuDetail linkTo="/mypage" icon={activeMenu === "mypage" ? "person" : "person-outline"} text="MY"/>
     </div>
   );
 }

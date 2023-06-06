@@ -9,6 +9,10 @@ import SignupInfo from "./pages/SignupInfo";
 import SignupMajor from "./pages/SignupMajor";
 import SignupPrivacy from "./pages/SignupPrivacy";
 import Main from "./pages/Main";
+import Job from "./pages/Job";
+import Education from "./pages/Education";
+import History from "./pages/History";
+import Mypage from "./pages/Mypage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +24,10 @@ root.render(
       <Route path="signupMajor" element={<SignupMajor/>}></Route>
       <Route path="signupPrivacy" element={<SignupPrivacy/>}></Route>
       <Route path="main" element={<Main/>}></Route>
+      <Route path="job" element={<Job/>}></Route>
+      <Route path="education" element={<Education/>}></Route>
+      <Route path="history" element={<History/>}></Route>
+      <Route path="mypage" element={<Mypage/>}></Route>
     </Routes>
   </BrowserRouter>
 );

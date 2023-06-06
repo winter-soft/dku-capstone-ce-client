@@ -1,13 +1,15 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
-const BottomMenuDetail = ({icon, text}) => {
+const BottomMenuDetail = ({linkTo, icon, text}) => {
+  const isActive = !icon.includes('outline') ? 'active' : '';
   return (
-    <div className="menu">
+    <Link to={linkTo} className={`menu ${isActive}`}>
       <div className="menuIcon">
         <ion-icon name={icon}></ion-icon>
       </div>
       <div className="menuText">{text}</div>
-    </div>
+    </Link>
   );
 }
 
