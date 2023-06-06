@@ -1,4 +1,5 @@
 import './App.css';
+import './common.js';
 import Login from "./pages/Login";
 
 const App = () => {

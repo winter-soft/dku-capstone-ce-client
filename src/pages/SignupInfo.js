@@ -1,52 +1,48 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import '../css/Signup.css';
-import BottomNextButton from "../components/common/BottomNextButton";
 import SignupForm from "../components/signup/SignupForm";
 import TopText from "../components/common/TopText";
-import {authenticate} from "../fetch";
+import {authenticate, tokenValid} from "../fetch";
+import {getObjectBySessionStorage, saveObjectToSessionStorage} from "../common";
 
 const SignupInfo = () => {
-  const [user, setUserData] = useState();
-
   useEffect(() => {
+    const code = getCodeFromUrl();
+
+    async function fetchData() {
+      const isUser = await checkSignUp(code);
+      if (isUser) {
+        // 토큰 값으로 유저 정보 호출
+        const savedUser = tokenValid(getObjectBySessionStorage('user').token);
+        const user = {
+          "email": savedUser.user_email,
+          "nickName": savedUser.user_nickName,
+          "platformType": savedUser.user_platformType,
+          "role": savedUser.user_role,
+        }
+        saveObjectToSessionStorage('user', user);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  const getCodeFromUrl = () => {
     const location = window.location;
     const queryParams = new URLSearchParams(location.search);
-    const code = queryParams.get('code');
-    registerCheck(code);
-    // eslint-disable-next-line no-use-before-define
-  }, [registerCheck]);
+    return queryParams.get('code');
+  }
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const registerCheck = async (code) => {
-    try {
-      const response = await authenticate(code);
-      setUserData(response.data);
-
-      if (user.platformId) { // 회원가입
-        sessionStorage.setItem('email', user.platformId)
-        sessionStorage.setItem('nickName', user.nickName)
-        sessionStorage.setItem('platformId', user.platformId)
-        sessionStorage.setItem('platformType', user.platformType)
-        sessionStorage.setItem('profileImageUrl', user.profileImageUrl)
-        sessionStorage.setItem('registerStage', user.registerStage)
-        sessionStorage.setItem('role', user.role)
-      } else if (user.token) { // 가입한 유저
-        sessionStorage.setItem('token', user.token)
-        window.location.href = '/main';
-      } else {
-        throw DOMException;
-      }
-    } catch (error) {
-      // alert("올바르지 못한 코드 값 입니다.")
-      // window.location.href = '/';
-    }
+  const checkSignUp = async (code) => {
+    const response = await authenticate(code);
+    saveObjectToSessionStorage('user', response.data);
+    return response.data.token;
   }
 
   return (
     <div className="App signup">
       <TopText text={["문자인증 1번만 하면", <br/>, "가입이 완료돼요!"]}></TopText>
-      <SignupForm data={user}/>
-      <BottomNextButton text="다음" linkTo="/signupMajor"></BottomNextButton>
+      <SignupForm data={getObjectBySessionStorage('user')}/>
     </div>
   );
 };

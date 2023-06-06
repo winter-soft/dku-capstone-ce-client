@@ -10,8 +10,8 @@ export const kakaoLoginPage = () => {
   return axios.get(`${API_BASE_URL}/auth/kakao/loginPage`)
 }
 
-export const register = (body) => {
-  return axios.post(`${API_BASE_URL}/auth/register`, body)
+export const registerAPI = (body) => {
+  return axios.post(`${API_BASE_URL}/auth/kakao/register/stage1`, body)
 }
 
 export const tokenValid = (token) => {
