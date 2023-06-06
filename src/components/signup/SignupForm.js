@@ -7,7 +7,7 @@ import AuthConfirm from "./AuthConfirm";
 const SignupForm = ({data}) => {
   return (
     <div className="mt30">
-      <Input type="text" placeholder="이름" value={data.name}></Input>
+      <Input type="text" placeholder="이름" value={data.nickName}></Input>
       <GenderButton/>
       <Input type="text" placeholder="이메일" value={data.email}></Input>
       <Input type="text" placeholder="나이"></Input>
