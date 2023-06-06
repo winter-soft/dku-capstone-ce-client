@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "../Input";
+import Input from "../common/Input";
 import GenderButton from "./GenderButton";
 import AuthNumber from "./AuthNumber";
 import AuthConfirm from "./AuthConfirm";

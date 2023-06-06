@@ -1,5 +1,5 @@
 import React from "react";
-import SnsButton from "../components/SnsButton";
+import SnsButton from "../components/common/SnsButton";
 import '../css/Login.css';
 
 const Login = () => {

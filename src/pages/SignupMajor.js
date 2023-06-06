@@ -1,8 +1,8 @@
 import React from "react";
 import '../css/Signup.css';
-import BottomNextButton from "../components/BottomNextButton";
-import TopText from "../components/TopText";
-import TopSmallText from "../components/TopSmallText";
+import BottomNextButton from "../components/common/BottomNextButton";
+import TopText from "../components/common/TopText";
+import TopSmallText from "../components/common/TopSmallText";
 import MajorButtons from "../components/signup/MajorButtons";
 
 const SignupMajor = () => {

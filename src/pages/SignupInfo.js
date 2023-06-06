@@ -1,8 +1,8 @@
 import React from "react";
 import '../css/Signup.css';
-import BottomNextButton from "../components/BottomNextButton";
+import BottomNextButton from "../components/common/BottomNextButton";
 import SignupForm from "../components/signup/SignupForm";
-import TopText from "../components/TopText";
+import TopText from "../components/common/TopText";
 
 const SignupInfo = () => {
   return (
