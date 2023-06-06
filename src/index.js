@@ -13,10 +13,13 @@ import Job from "./pages/Job";
 import Education from "./pages/Education";
 import History from "./pages/History";
 import Mypage from "./pages/Mypage";
+import Jobs from "./pages/Jobs";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
+    <ScrollToTop/>
     <Routes>
       <Route path="/" element={<App/>}></Route>
       <Route path="login" element={<Login/>}></Route>
@@ -25,6 +28,7 @@ root.render(
       <Route path="signupPrivacy" element={<SignupPrivacy/>}></Route>
       <Route path="main" element={<Main/>}></Route>
       <Route path="job" element={<Job/>}></Route>
+      <Route path="jobs" element={<Jobs/>}></Route>
       <Route path="education" element={<Education/>}></Route>
       <Route path="history" element={<History/>}></Route>
       <Route path="mypage" element={<Mypage/>}></Route>
