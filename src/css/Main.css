@@ -1,0 +1,107 @@
+:root {
+    --swiper-theme-color: var(--color-white) !important;
+}
+
+.swiper {
+    width: 100%;
+    margin-top: 20px;
+    height: 200px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.swiper-slide .sliderImage, .swiper-slide .miniSliderImage {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.miniSliderImage p {
+    color: var(--color-black);
+    position: relative;
+    bottom: -10px;
+    text-align: left;
+    margin: 0 0 5px 0;
+}
+
+.sliderImage p {
+    color: var(--color-white);
+    position: relative;
+    bottom: 130px;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+.sliderImage .title {
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.sliderImage .content {
+    font-size: 1rem;
+}
+
+.miniSliderImage .title {
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.miniSliderImage .content {
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+
+.mainTitle {
+    font-weight: bolder;
+    font-size: 1.2rem;
+    margin-top: 30px;
+}
+
+.aroundJobBox {
+    background-color: var(--color-light-gray);
+    width: 100%;
+    height: 120px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.currentJobBox {
+    width: 100%;
+}
+
+.currentJobBox img {
+    width: 100%;
+    border-radius: 20px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.currentJobBox p {
+    margin: 5px 0 5px 0;
+}
+
+.currentJobBox .title {
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+.currentJobBox .content {
+    font-weight: normal;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.pageBottomPadding {
+    height: 120px;
+}
+

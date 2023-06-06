@@ -8,6 +8,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SignupInfo from "./pages/SignupInfo";
 import SignupMajor from "./pages/SignupMajor";
 import SignupPrivacy from "./pages/SignupPrivacy";
+import Main from "./pages/Main";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,6 +19,7 @@ root.render(
       <Route path="signupInfo" element={<SignupInfo/>}></Route>
       <Route path="signupMajor" element={<SignupMajor/>}></Route>
       <Route path="signupPrivacy" element={<SignupPrivacy/>}></Route>
+      <Route path="main" element={<Main/>}></Route>
     </Routes>
   </BrowserRouter>
 );

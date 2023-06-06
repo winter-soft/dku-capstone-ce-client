@@ -7,7 +7,7 @@
     --color-kakao-text: #191603;
     --color-naver: #1FCB53;
     --color-gray: #aeaeae;
-    --color-light-gray: #FAFAFB;
+    --color-light-gray: #E5E5E5;
     --color-primary: #46D96F;
     --color-red: #FF0000;
 }
@@ -180,4 +180,33 @@ button {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+.header {
+    padding: 5px 5px 10px 5px;
+}
+
+.header .logoText {
+    font-family: 'GimpoBatang00';
+    font-size: 1.2rem;
+}
+
+.header .icon {
+    float: right;
+    font-size: 1.5rem;
+}
+
+.roundBtnBox {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.roundBtn {
+    width: 100%;
+    text-align: center;
+    color: var(--color-white);
+    font-weight: normal;
+    font-size: 1rem;
+    border-radius: 30px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5awZuyk-aBRKB0jD7m3vNK3dconhBzjhz6A&usqp=CAU");
 }
