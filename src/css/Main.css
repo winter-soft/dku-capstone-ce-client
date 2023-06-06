@@ -40,7 +40,7 @@
 
 .sliderImage .title {
     font-size: 1.2rem;
-    font-weight: bolder;
+    font-weight: 700;
 }
 
 .sliderImage .content {
@@ -49,7 +49,7 @@
 
 .miniSliderImage .title {
     font-size: 1rem;
-    font-weight: bolder;
+    font-weight: 700;
 }
 
 .miniSliderImage .content {
@@ -59,7 +59,7 @@
 
 
 .mainTitle {
-    font-weight: bolder;
+    font-weight: 700;
     font-size: 1.2rem;
     margin-top: 30px;
 }
@@ -91,7 +91,7 @@
 }
 
 .currentJobBox .title {
-    font-weight: bolder;
+    font-weight: 700;
     font-size: 1rem;
 }
 
