@@ -11,9 +11,9 @@ import {getItemBySessionStorage, saveUserToSession} from "../common";
 import RecommendJob from "../components/main/RecommendJob";
 
 const Main = () => {
-  const token = getItemBySessionStorage('token');
-
   useEffect(() => {
+    const token = getItemBySessionStorage('token');
+
     const saveUser = async (token) => {
       return await tokenValid(token);
     }
