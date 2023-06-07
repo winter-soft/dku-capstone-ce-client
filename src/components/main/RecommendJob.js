@@ -5,7 +5,7 @@ import MiniSliderImage from "./MiniSliderImage";
 import {announceListAPI} from "../../fetch";
 import {getItemBySessionStorage} from "../../common";
 
-const InterestJob = ({title}) => {
+const RecommendJob = ({title}) => {
   const token = getItemBySessionStorage("token");
 
   const [announcement, setAnnouncement] = useState([]);
@@ -13,7 +13,7 @@ const InterestJob = ({title}) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await announceListAPI(token, "CLASS");
+        const response = await announceListAPI(token, "RECRUIT");
         setAnnouncement(response.data.content);
       } catch (error) {
         console.error(error);
@@ -42,4 +42,4 @@ const InterestJob = ({title}) => {
   );
 };
 
-export default InterestJob;
+export default RecommendJob;

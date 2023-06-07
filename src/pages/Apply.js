@@ -5,7 +5,7 @@ import TopText from "../components/common/TopText";
 import {authenticate} from "../fetch";
 import {getObjectBySessionStorage, saveItemToSessionStorage, saveObjectToSessionStorage} from "../common";
 
-const SignupInfo = () => {
+const Apply = () => {
   useEffect(() => {
     const code = getCodeFromUrl();
 
@@ -40,4 +40,4 @@ const SignupInfo = () => {
   );
 };
 
-export default SignupInfo;
+export default Apply;

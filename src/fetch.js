@@ -29,3 +29,23 @@ export const tokenValid = (token) => {
     }
   });
 };
+
+export const jobPreferenceAPI = (token) => {
+  return ApiMethodGET('/job/preference/', token);
+}
+
+export const announceListAPI = (token, type) => {
+  return ApiMethodGET(`/announce/?type=${type}`, token);
+}
+
+export const announceAPI = (token, id) => {
+  return ApiMethodGET(`/announce/${id}`, token);
+}
+
+export const ApiMethodGET = (url, token) => {
+  return axios.get(`${API_BASE_URL}${url}`, {
+    headers: {
+      "Authorization": `Bearer ${token}`
+    }
+  });
+}
