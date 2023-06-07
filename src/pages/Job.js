@@ -8,8 +8,6 @@ import {announceAPI} from "../fetch";
 import JobDetailInfo from "../components/job/JobDetailInfo";
 
 const Job = () => {
-  const imgExampleUrl = 'https://webzine.kccworld.co.kr/data/cn/87/7.jpg';
-
   const token = getItemBySessionStorage("token");
 
   const [announcement, setAnnouncement] = useState({});
