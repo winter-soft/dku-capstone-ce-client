@@ -1,8 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import '../css/Apply.css';
 import Header from "../components/common/Header";
+import ApplyBox from "../components/apply/ApplyBox";
 
 const Apply = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    setIsActive((prevIsActive) => !prevIsActive);
+  };
+
+  const activeClass = isActive ? 'active' : '';
+
   return (
     <div className="App">
       <Header/>
@@ -28,19 +37,9 @@ const Apply = () => {
           <p className="applyDescription">주식회사 가화에 보낼 이력사항을 선택해주세요.</p>
         </div>
         <div className="mb50">
-          <p className="applyBoxTitle">입주관리매니저 <span><ion-icon name="chevron-down-outline"></ion-icon></span></p>
-          <div className="applyBox active">
-            <p>입주관리매니저 <span>KCC 스위첸 하버뷰</span></p>
-            <p className="date">2022.11 ~ 2023.02</p>
-          </div>
-          <div className="applyBox">
-            <p>입주관리매니저 <span>KCC 스위첸 하버뷰</span></p>
-            <p className="date">2022.11 ~ 2023.02</p>
-          </div>
-          <div className="applyBox">
-            <p>입주관리매니저 <span>KCC 스위첸 하버뷰</span></p>
-            <p className="date">2022.11 ~ 2023.02</p>
-          </div>
+          <ApplyBox title={"입주관리매니저"} company={"KCC 스위첸 하버뷰"} date={"2022.11 ~ 2023.02"}/>
+          <ApplyBox title={"입주관리매니저"} company={"KCC 스위첸 하버뷰"} date={"2022.11 ~ 2023.02"}/>
+          <ApplyBox title={"입주관리매니저"} company={"KCC 스위첸 하버뷰"} date={"2022.11 ~ 2023.02"}/>
         </div>
       </div>
 
