@@ -6,11 +6,13 @@ import AroundJob from "../components/main/AroundJob";
 import BottomMenu from "../components/common/BottomMenu";
 import {getItemByKey} from "../common";
 import RecommendJob from "../components/main/RecommendJob";
+import Loading from "../components/common/Loading";
 
 const Jobs = () => {
   const nickName = getItemByKey("nickName");
   return (
     <div className="App">
+      <Loading/>
       <Header/>
       <RecommendJob title={`${nickName}님께 추천드려요!`}/>
       <AroundJob/>

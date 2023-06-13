@@ -3,10 +3,12 @@ import '../css/Apply.css';
 import Header from "../components/common/Header";
 import ApplyBox from "../components/apply/ApplyBox";
 import {getItemByKey} from "../common";
+import Loading from "../components/common/Loading";
 
 const Apply = () => {
   return (
     <div className="App">
+      <Loading/>
       <Header/>
       <div>
         <p className="applyTitle">지원 정보</p>

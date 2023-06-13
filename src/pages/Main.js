@@ -9,6 +9,7 @@ import CurrentJob from "../components/main/CurrentJob";
 import RecommendJob from "../components/main/RecommendJob";
 import {tokenValid} from "../fetch";
 import {logout, saveValidInfoToSession} from "../common";
+import Loading from "../components/common/Loading";
 
 const Main = () => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const Main = () => {
 
   return (
     <div className="App">
+      <Loading/>
       <Header hideBackBtn={true}/>
       <Slider/>
       <RoundButton text="직무 추천 받으러 가기" linkTo="/jobs"/>

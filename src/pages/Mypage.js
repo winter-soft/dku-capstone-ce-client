@@ -3,10 +3,12 @@ import '../css/Job.css';
 import Header from "../components/common/Header";
 import BottomMenu from "../components/common/BottomMenu";
 import {confirmLogout, getItemByKey} from "../common";
+import Loading from "../components/common/Loading";
 
 const Mypage = () => {
   return (
     <div className="App">
+      <Loading/>
       <Header/>
       <div className="mypage">
         <img src={getItemByKey("profileImageUrl")} alt="" className="profile"/>

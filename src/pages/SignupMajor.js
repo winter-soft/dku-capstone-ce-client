@@ -5,6 +5,7 @@ import TopSmallText from "../components/common/TopSmallText";
 import MajorButton from "../components/signup/MajorButton";
 import {getItemByKey} from "../common";
 import {registerStage2API} from "../fetch";
+import Loading from "../components/common/Loading";
 
 const SignupMajor = () => {
   const [preference, setPreference] = useState("");
@@ -44,6 +45,7 @@ const SignupMajor = () => {
 
   return (
     <div className="App signup">
+      <Loading/>
       <TopText text={["경력 또는 관심이 있는", <br/>, "직종을 선택해 주세요 😁"]}></TopText>
       <TopSmallText text={["선택해 주시면 저희가", <br/>, "스마트하게 회사를 추천해 드릴께요."]}></TopSmallText>
       <div className="majorBtnBox">

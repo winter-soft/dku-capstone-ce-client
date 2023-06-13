@@ -6,6 +6,7 @@ import Privacy from "../components/signup/Privacy";
 import ToggleButton from "../components/common/ToggleButton";
 import {registerStage3API} from "../fetch";
 import {getItemByKey, saveItem} from "../common";
+import Loading from "../components/common/Loading";
 
 const SignupPrivacy = () => {
   const handleRegisterButtonClick = () => {
@@ -30,6 +31,7 @@ const SignupPrivacy = () => {
 
   return (
     <div className="App signup">
+      <Loading/>
       <TopText text={["개인정보처리방침에", <br/>, "동의해주세요 💼"]}></TopText>
       <TopSmallText text={["주부의 직업에서는 암호화를 통해 ", <br/>, "고객님의 정보를 안전하게 보관합니다."]}></TopSmallText>
       <Privacy/>

@@ -6,6 +6,7 @@ import ShareButton from "../components/common/ShareButton";
 import {getItemByKey} from "../common";
 import {announceAPI} from "../fetch";
 import JobDetailInfo from "../components/job/JobDetailInfo";
+import Loading from "../components/common/Loading";
 
 const Job = () => {
   const token = getItemByKey("token");
@@ -32,6 +33,7 @@ const Job = () => {
 
   return (
     <div className="App">
+      <Loading/>
       <Header/>
       <img src={announcement.announce_imageUrl} alt="" className="jobImg"/>
       <ShareButton/>
