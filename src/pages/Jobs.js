@@ -8,11 +8,11 @@ import {getItemByKey} from "../common";
 import RecommendJob from "../components/main/RecommendJob";
 
 const Jobs = () => {
-  const user = getItemByKey('user');
+  const nickName = getItemByKey("nickName");
   return (
     <div className="App">
       <Header/>
-      <RecommendJob title={`${user.nickName}님께 추천드려요!`}/>
+      <RecommendJob title={`${nickName}님께 추천드려요!`}/>
       <AroundJob/>
       <InterestJob title="내 관심분야에요"/>
       <div className="pageBottomPadding"></div>

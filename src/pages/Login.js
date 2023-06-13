@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import SnsButton from "../components/common/SnsButton";
 import '../css/Login.css';
-import {kakaoLoginPage} from "../fetch";
+import {kakaoLoginPage, tokenValid} from "../fetch";
 
 const Login = () => {
   const [kakaoLoginPageUrl, setKakaoLoginPageUrl] = useState('');
@@ -10,7 +10,21 @@ const Login = () => {
       const page = await kakaoLoginPage();
       setKakaoLoginPageUrl(page.data.loginPage);
     }
-    fetchLoginPage();
+
+    async function checkLogin() {
+      const response = await tokenValid();
+      if (response.data) {
+        window.location.href = "/main";
+      }
+    }
+
+    fetchLoginPage().catch(e => {
+      console.log(e);
+    });
+    
+    checkLogin().catch(e => {
+      console.log("first init");
+    });
   }, []);
 
   return (

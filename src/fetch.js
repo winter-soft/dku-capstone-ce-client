@@ -23,12 +23,8 @@ export const registerStage3API = (body) => {
   return axios.post(`${API_BASE_URL}/auth/kakao/register/stage3`, body)
 }
 
-export const tokenValid = (token) => {
-  return axios.get(`${API_BASE_URL}/auth/valid`, {
-    headers: {
-      "Authorization": `Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRU5URVJQUklTRSIsImlkIjoiNSIsInN1YiI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE2ODYxMDI2NDYsImV4cCI6MTY4NjEyNDI0Nn0.EQ6BXddGhHf-K6n4Euklj6WaoMp6go0CMlK4k2WJYkA`
-    }
-  });
+export const tokenValid = () => {
+  return ApiMethodGET(`/auth/valid`);
 };
 
 export const jobPreferenceAPI = () => {

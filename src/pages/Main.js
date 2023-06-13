@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import '../css/Main.css';
 import Header from "../components/common/Header";
 import BottomMenu from "../components/common/BottomMenu";
@@ -7,8 +7,20 @@ import RoundButton from "../components/common/RoundButton";
 import AroundJob from "../components/main/AroundJob";
 import CurrentJob from "../components/main/CurrentJob";
 import RecommendJob from "../components/main/RecommendJob";
+import {tokenValid} from "../fetch";
+import {saveValidInfoToSession} from "../common";
 
 const Main = () => {
+  useEffect(() => {
+    async function fetchUserData() {
+      const response = await tokenValid();
+      saveValidInfoToSession(response.data);
+    }
+
+    fetchUserData();
+
+  }, []);
+
   return (
     <div className="App">
       <Header hideBackBtn={true}/>

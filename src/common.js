@@ -13,13 +13,13 @@ export const removeAllSession = () => {
   sessionStorage.clear()
 }
 
-export const saveUserToSession = (response) => {
-  saveItem("email", response.data.user_email);
-  saveItem("profileImageUrl", response.data.user_profileImageUrl);
-  saveItem("nickName", response.data.user_nickName);
-  saveItem("platformType", response.data.user_platformType);
-  saveItem("role", response.data.user_role);
-  saveItem("preference", response.data.user_preference);
+export const saveValidInfoToSession = (data) => {
+  saveItem("email", data.user_email);
+  saveItem("profileImageUrl", data.user_profileImageUrl);
+  saveItem("nickName", data.user_nickName);
+  saveItem("platformType", data.user_platformType);
+  saveItem("role", data.user_role);
+  saveItem("preference", data.user_preference);
 }
 
 export const saveRegisterInfoToSession = (data) => {

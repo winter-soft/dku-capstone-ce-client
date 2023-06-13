@@ -36,9 +36,9 @@ const Job = () => {
       <img src={announcement.announce_imageUrl} alt="" className="jobImg"/>
       <ShareButton/>
       <div className="jobContent">
+        <div className="statusBox"><span>지원률 높음</span></div>
         <p className="jobName">
           {announcement.announce_title}
-          <span className="statusBox">지원률 높음</span>
         </p>
         <p className="company">KCC</p>
         <p className="address">광안 KCC 스위첸 하버뷰</p>
