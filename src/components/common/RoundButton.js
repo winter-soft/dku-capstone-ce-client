@@ -1,11 +1,11 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const RoundButton = ({text}) => {
+const RoundButton = ({text, linkTo}) => {
 
   return (
     <div className="roundBtnBox">
-      <Link>
+      <Link to={linkTo}>
         <button className="roundBtn">
           {text}
         </button>

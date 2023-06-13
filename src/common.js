@@ -13,6 +13,17 @@ export const removeAllSession = () => {
   sessionStorage.clear()
 }
 
+export const logout = () => {
+  removeAllSession();
+  window.location.href = "/";
+}
+
+export const confirmLogout = () => {
+  // eslint-disable-next-line no-restricted-globals
+  if (confirm("로그아웃 하시겠습니까?")) {
+    logout();
+  }
+}
 export const saveValidInfoToSession = (data) => {
   saveItem("email", data.user_email);
   saveItem("profileImageUrl", data.user_profileImageUrl);

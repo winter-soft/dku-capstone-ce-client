@@ -8,7 +8,7 @@ import AroundJob from "../components/main/AroundJob";
 import CurrentJob from "../components/main/CurrentJob";
 import RecommendJob from "../components/main/RecommendJob";
 import {tokenValid} from "../fetch";
-import {saveValidInfoToSession} from "../common";
+import {logout, saveValidInfoToSession} from "../common";
 
 const Main = () => {
   useEffect(() => {
@@ -17,7 +17,9 @@ const Main = () => {
       saveValidInfoToSession(response.data);
     }
 
-    fetchUserData();
+    fetchUserData().catch(e => {
+      logout();
+    });
 
   }, []);
 
@@ -25,7 +27,7 @@ const Main = () => {
     <div className="App">
       <Header hideBackBtn={true}/>
       <Slider/>
-      <RoundButton text="직무 추천 받으러 가기"/>
+      <RoundButton text="직무 추천 받으러 가기" linkTo="/jobs"/>
       <AroundJob/>
       <RecommendJob title="내 관심분야에요"/>
       <CurrentJob title="직무별로 나눠 보는 요즘 채용"/>
