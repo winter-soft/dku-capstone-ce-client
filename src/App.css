@@ -409,7 +409,7 @@ button {
     overflow: hidden;
     text-indent: -999em;
     vertical-align: text-bottom;
-    background-color: currentColor;
+    background-color: var(--color-gray);
     border-radius: 50%;
     animation-name: spinner-grow;
     animation-duration: 0.75s;
