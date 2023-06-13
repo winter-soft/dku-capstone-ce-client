@@ -2,6 +2,7 @@ import React from "react";
 import '../css/Apply.css';
 import Header from "../components/common/Header";
 import ApplyBox from "../components/apply/ApplyBox";
+import {getItemByKey} from "../common";
 
 const Apply = () => {
   return (
@@ -11,11 +12,11 @@ const Apply = () => {
         <p className="applyTitle">지원 정보</p>
         <div>
           <label htmlFor="name" className="applyLabel">이름</label>
-          <input type="text" id="name" className="applyInput"/>
+          <input type="text" id="name" className="applyInput" value={getItemByKey("nickName")}/>
           <label htmlFor="email" className="applyLabel">이메일</label>
-          <input type="text" id="email" className="applyInput"/>
+          <input type="text" id="email" className="applyInput" value={getItemByKey("email")}/>
           <label htmlFor="phoneNumber" className="applyLabel">휴대폰 번호</label>
-          <input type="text" id="phoneNumber" className="applyInput"/>
+          <input type="text" id="phoneNumber" className="applyInput" defaultValue="010-8225-0640"/>
           <label htmlFor="recommender" className="applyLabel">추천인</label>
           <input type="text" id="recommender" className="applyInput"/>
         </div>
