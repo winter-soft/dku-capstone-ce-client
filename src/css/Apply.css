@@ -1,0 +1,118 @@
+.applyTitle {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.applyInput {
+    margin-left: 10px;
+    border: none;
+    border-bottom: 1px dotted var(--color-gray);
+    width: 90%;
+    height: 35px;
+    padding-left: 110px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+}
+
+.applyInput:focus, .applyInput:active {
+    outline: none;
+}
+
+.applyLabel {
+    margin-left: 10px;
+    display: inline-block;
+    position: relative;
+    top: 23px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.applyDescription {
+    color: var(--color-dark-gray);
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.applyBoxTitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    border-top: 1px dotted var(--color-dark-gray);
+    padding-top: 15px;
+}
+
+.applyBoxTitle span {
+    float: right;
+    margin-right: 15px;
+}
+
+.applyBox {
+    width: 90%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    box-sizing: border-box;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.applyBox.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.applyBox.active .date {
+    color: var(--color-white);
+}
+
+
+.applyBox p {
+    font-weight: 700;
+}
+
+.applyBox span {
+    font-size: 0.9rem;
+    float: right;
+    font-weight: 500;
+}
+
+.applyBox .date {
+    color: var(--color-dark-gray);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.mt50 {
+    margin-top: 50px;
+}
+
+.mb50 {
+    height: 500px;
+}
+
+.checkElement {
+    position: relative;
+}
+
+.checkboxLabel {
+    position: absolute;
+    right: 49px;
+    bottom: 14px;
+}
+
+input[type=checkbox] {
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    accent-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
+}

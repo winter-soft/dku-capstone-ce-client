@@ -15,6 +15,7 @@ import History from "./pages/History";
 import Mypage from "./pages/Mypage";
 import Jobs from "./pages/Jobs";
 import ScrollToTop from "./components/common/ScrollToTop";
+import Apply from "./pages/Apply";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -32,6 +33,7 @@ root.render(
       <Route path="education" element={<Education/>}></Route>
       <Route path="history" element={<History/>}></Route>
       <Route path="mypage" element={<Mypage/>}></Route>
+      <Route path="apply" element={<Apply/>}></Route>
     </Routes>
   </BrowserRouter>
 );

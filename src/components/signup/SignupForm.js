@@ -157,7 +157,7 @@ const SignupForm = () => {
         placeholder="인증번호를 입력해주세요"
         onChange={onChange}
       />
-      <button className="bottomNextBtn" onClick={handleSubmit}>다음</button>
+      <button classNa음me="bottomNextBtn" onClick={handleSubmit}>다음</button>
     </div>
   );
 };

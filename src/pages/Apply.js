@@ -1,14 +1,50 @@
 import React from "react";
-import '../css/Signup.css';
-import SignupForm from "../components/signup/SignupForm";
-import TopText from "../components/common/TopText";
-import {getItemByKey} from "../common";
+import '../css/Apply.css';
+import Header from "../components/common/Header";
 
 const Apply = () => {
   return (
-    <div className="App signup">
-      <TopText text="지원정보"></TopText>
-      <SignupForm data={getItemByKey('user')}/>
+    <div className="App">
+      <Header/>
+      <div>
+        <p className="applyTitle">지원 정보</p>
+        <div>
+          <label htmlFor="name" className="applyLabel">이름</label>
+          <input type="text" id="name" className="applyInput"/>
+          <label htmlFor="email" className="applyLabel">이메일</label>
+          <input type="text" id="email" className="applyInput"/>
+          <label htmlFor="phoneNumber" className="applyLabel">휴대폰 번호</label>
+          <input type="text" id="phoneNumber" className="applyInput"/>
+          <label htmlFor="recommender" className="applyLabel">추천인</label>
+          <input type="text" id="recommender" className="applyInput"/>
+        </div>
+
+        <div className="mt50">
+          <p className="applyTitle">이력사항</p>
+          <div className="checkElement">
+            <label htmlFor="choiceAll" className="checkboxLabel">전체 선택하기</label>
+            <input type="checkbox" id="choiceAll"/>
+          </div>
+          <p className="applyDescription">주식회사 가화에 보낼 이력사항을 선택해주세요.</p>
+        </div>
+        <div className="mb50">
+          <p className="applyBoxTitle">입주관리매니저 <span><ion-icon name="chevron-down-outline"></ion-icon></span></p>
+          <div className="applyBox active">
+            <p>입주관리매니저 <span>KCC 스위첸 하버뷰</span></p>
+            <p className="date">2022.11 ~ 2023.02</p>
+          </div>
+          <div className="applyBox">
+            <p>입주관리매니저 <span>KCC 스위첸 하버뷰</span></p>
+            <p className="date">2022.11 ~ 2023.02</p>
+          </div>
+          <div className="applyBox">
+            <p>입주관리매니저 <span>KCC 스위첸 하버뷰</span></p>
+            <p className="date">2022.11 ~ 2023.02</p>
+          </div>
+        </div>
+      </div>
+
+      <button className="bottomNextBtn" onClick="">지원하기</button>
     </div>
   );
 };
