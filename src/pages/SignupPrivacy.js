@@ -5,16 +5,15 @@ import TopSmallText from "../components/common/TopSmallText";
 import Privacy from "../components/signup/Privacy";
 import ToggleButton from "../components/common/ToggleButton";
 import {registerStage3API} from "../fetch";
-import {getObjectBySessionStorage, saveItemToSessionStorage} from "../common";
+import {getItemByKey, saveItem} from "../common";
 
 const SignupPrivacy = () => {
-  const user = getObjectBySessionStorage('user');
   const handleRegisterButtonClick = () => {
     // API 호출 등의 로직 추가
     saveDataToServer({
-      platformId: user.platformId,
-      platformType: user.platformType,
-      email: user.email,
+      platformId: getItemByKey("platformId"),
+      platformType: getItemByKey("platformType"),
+      email: getItemByKey("email"),
     });
   };
 
@@ -24,9 +23,8 @@ const SignupPrivacy = () => {
     }
 
     response().then(body => {
-      saveItemToSessionStorage("token", body.data.token);
+      saveItem("token", body.data.token);
       window.location.href = "/main";
-      // window.location.href = "/main";
     });
   };
 

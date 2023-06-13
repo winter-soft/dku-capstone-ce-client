@@ -3,12 +3,12 @@ import '../css/Job.css';
 import Header from "../components/common/Header";
 import BottomDoubleButtons from "../components/common/BottomDoubleButtons";
 import ShareButton from "../components/common/ShareButton";
-import {getItemBySessionStorage} from "../common";
+import {getItemByKey} from "../common";
 import {announceAPI} from "../fetch";
 import JobDetailInfo from "../components/job/JobDetailInfo";
 
 const Job = () => {
-  const token = getItemBySessionStorage("token");
+  const token = getItemByKey("token");
 
   const [announcement, setAnnouncement] = useState({});
 
@@ -40,8 +40,8 @@ const Job = () => {
           {announcement.announce_title}
           <span className="statusBox">지원률 높음</span>
         </p>
-        <p className="company">{announcement.company.company_name}</p>
-        <p className="address">{announcement.location.address}</p>
+        <p className="company">KCC</p>
+        <p className="address">광안 KCC 스위첸 하버뷰</p>
         <JobDetailInfo/>
         <div className="content">
           {announcement.announce_detail}

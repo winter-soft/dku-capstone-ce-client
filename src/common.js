@@ -1,26 +1,33 @@
-export const saveObjectToSessionStorage = (keyName, data) => {
-  sessionStorage.setItem(keyName, JSON.stringify(data));
+export const saveItem = (key, value) => {
+  return sessionStorage.setItem(key, value);
+}
+export const getItemByKey = (key) => {
+  return sessionStorage.getItem(key);
 }
 
-export const getObjectBySessionStorage = (keyName) => {
-  return JSON.parse(sessionStorage.getItem(keyName));
+export const removeItemByKey = (keyName) => {
+  sessionStorage.removeItem(keyName);
 }
 
-export const saveItemToSessionStorage = (keyName, data) => {
-  sessionStorage.setItem(keyName, data);
-}
-
-export const getItemBySessionStorage = (keyName) => {
-  return sessionStorage.getItem(keyName);
+export const removeAllSession = () => {
+  sessionStorage.clear()
 }
 
 export const saveUserToSession = (response) => {
-  saveObjectToSessionStorage('user', {
-    "email": response.data.user_email,
-    "profileImageUrl": response.data.user_profileImageUrl,
-    "nickName": response.data.user_nickName,
-    "platformType": response.data.user_platformType,
-    "role": response.data.user_role,
-    "preference": response.data.user_preference,
-  });
+  saveItem("email", response.data.user_email);
+  saveItem("profileImageUrl", response.data.user_profileImageUrl);
+  saveItem("nickName", response.data.user_nickName);
+  saveItem("platformType", response.data.user_platformType);
+  saveItem("role", response.data.user_role);
+  saveItem("preference", response.data.user_preference);
+}
+
+export const saveRegisterInfoToSession = (data) => {
+  saveItem("email", data.email);
+  saveItem("profileImageUrl", data.profileImageUrl);
+  saveItem("nickName", data.nickName);
+  saveItem("platformId", data.platformId);
+  saveItem("platformType", data.platformType);
+  saveItem("role", data.role);
+  saveItem("registerStage", data.registerStage);
 }

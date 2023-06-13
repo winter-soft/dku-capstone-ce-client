@@ -7,12 +7,12 @@ import RoundButton from "../components/common/RoundButton";
 import AroundJob from "../components/main/AroundJob";
 import CurrentJob from "../components/main/CurrentJob";
 import {announceAPI, tokenValid} from "../fetch";
-import {getItemBySessionStorage, saveUserToSession} from "../common";
+import {getItemByKey, saveUserToSession} from "../common";
 import RecommendJob from "../components/main/RecommendJob";
 
 const Main = () => {
   useEffect(() => {
-    const token = getItemBySessionStorage('token');
+    const token = getItemByKey('token');
 
     const saveUser = async (token) => {
       return await tokenValid(token);

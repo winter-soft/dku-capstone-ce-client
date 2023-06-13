@@ -3,11 +3,10 @@ import '../css/Signup.css';
 import TopText from "../components/common/TopText";
 import TopSmallText from "../components/common/TopSmallText";
 import MajorButton from "../components/signup/MajorButton";
-import {getObjectBySessionStorage} from "../common";
+import {getItemByKey} from "../common";
 import {registerStage2API} from "../fetch";
 
 const SignupMajor = () => {
-  const user = getObjectBySessionStorage('user');
   const [preference, setPreference] = useState("");
 
   const handleButtonClick = (title) => {
@@ -25,9 +24,9 @@ const SignupMajor = () => {
 
     // API 호출 등의 로직 추가
     saveDataToServer({
-      platformId: user.platformId,
-      platformType: user.platformType,
-      email: user.email,
+      platformId: getItemByKey("platformId"),
+      platformType: getItemByKey("platformType"),
+      email: getItemByKey("email"),
       preference: joinedPreferences,
     });
   };

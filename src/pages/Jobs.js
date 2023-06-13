@@ -4,11 +4,11 @@ import Header from "../components/common/Header";
 import InterestJob from "../components/main/InterestJob";
 import AroundJob from "../components/main/AroundJob";
 import BottomMenu from "../components/common/BottomMenu";
-import {getObjectBySessionStorage} from "../common";
+import {getItemByKey} from "../common";
 import RecommendJob from "../components/main/RecommendJob";
 
 const Jobs = () => {
-  const user = getObjectBySessionStorage('user');
+  const user = getItemByKey('user');
   return (
     <div className="App">
       <Header/>

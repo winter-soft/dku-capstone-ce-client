@@ -3,10 +3,10 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import MiniSliderImage from "./MiniSliderImage";
 import {announceListAPI} from "../../fetch";
-import {getItemBySessionStorage} from "../../common";
+import {getItemByKey} from "../../common";
 
 const RecommendJob = ({title}) => {
-  const token = getItemBySessionStorage("token");
+  const token = getItemByKey("token");
 
   const [announcement, setAnnouncement] = useState([]);
 
@@ -33,7 +33,7 @@ const RecommendJob = ({title}) => {
                 linkTo={`/job?id=${data.announce_id}`}
                 imgUrl={data.announce_imageUrl}
                 title={data.announce_title}
-                content={data.company.company_name}
+                content="KCC"
               />
             </SwiperSlide>
           ))}

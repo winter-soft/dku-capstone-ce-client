@@ -1,38 +1,59 @@
-import React, {useState} from "react";
-import {getObjectBySessionStorage} from "../../common";
-import {registerStage1API} from "../../fetch";
+import React, {useEffect, useState} from "react";
+import {saveItem, saveRegisterInfoToSession} from "../../common";
+import {authenticate, registerStage1API} from "../../fetch";
 
-const SignupForm = ({data}) => {
-  const user = getObjectBySessionStorage('user');
-  const [inputs, setInputs] = useState({
-    nickName: data.nickName || "",
+const SignupForm = () => {
+  const [user, setUser] = useState({
+    profileImageUrl: "",
+    nickName: "",
+    email: "",
     gender: "",
-    email: data.email || "",
     age: "",
     phoneNumber: "",
     platformId: "",
     platformType: "",
   });
-
+  const {nickName, gender, email, age, phoneNumber} = user;
   const [selectedGender, setSelectedGender] = useState("");
 
-  const {nickName, gender, email, age, phoneNumber} = inputs;
+  useEffect(() => {
+    async function fetchUserData(code) {
+      const response = await authenticate(code);
+      const token = response.data.token;
+      if (token) {
+        saveItem("token", token);
+        window.location.href = "/main";
+      } else {
+        saveRegisterInfoToSession(response.data);
+        if (response.data.registerStage === 1) {
+          window.location.href = "/signupMajor";
+        } else if (response.data.registerStage === 1) {
+          window.location.href = "/signupPrivacy";
+        }
+        return response.data;
+      }
+    }
+
+    fetchUserData(getCodeFromUrl()).then(r => setUser(r));
+
+  }, []);
 
   const onChange = (e) => {
     const {name, value} = e.target;
 
-    setInputs((prevInputs) => ({
+    setUser((prevInputs) => ({
       ...prevInputs,
       [name]: value,
     }));
   };
+
 
   const handleGenderChange = (e) => {
     const {value} = e.target;
 
     setSelectedGender(value);
 
-    setInputs((prevInputs) => ({
+    setUser((prevInputs) => ({
       ...prevInputs,
       gender: value,
     }));
@@ -64,14 +85,27 @@ const SignupForm = ({data}) => {
   };
 
 
+  const getCodeFromUrl = () => {
+    const location = window.location;
+    const queryParams = new URLSearchParams(location.search);
+    return queryParams.get('code');
+  }
+
   return (
-    <div className="mt30">
+    <div className="">
+      <div className="signupTitle">
+        안녕하세요! {user.nickName}님 :) <br/>
+        <span>
+          문자 인증 후 가입이 완료돼요!
+        </span>
+      </div>
+      <img src={user.profileImageUrl} alt="" className="signupProfile"/>
       <input
         type="text"
         name="nickName"
         className="customInput"
         placeholder="이름을 입력해주세요"
-        value={nickName}
+        value={user.nickName}
         onChange={onChange}
       />
       <button
@@ -97,8 +131,7 @@ const SignupForm = ({data}) => {
         name="email"
         className="customInput"
         placeholder="이메일을 입력해주세요"
-        value={email}
-        onChange={onChange}
+        value={user.email}
       />
       <input
         type="text"
