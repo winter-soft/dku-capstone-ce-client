@@ -1,17 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import '../css/Apply.css';
 import Header from "../components/common/Header";
 import ApplyBox from "../components/apply/ApplyBox";
 
 const Apply = () => {
-  const [isActive, setIsActive] = useState(false);
-
-  const handleClick = () => {
-    setIsActive((prevIsActive) => !prevIsActive);
-  };
-
-  const activeClass = isActive ? 'active' : '';
-
   return (
     <div className="App">
       <Header/>
