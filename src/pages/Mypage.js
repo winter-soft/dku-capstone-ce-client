@@ -12,6 +12,7 @@ const Mypage = () => {
         <img src={getItemByKey("profileImageUrl")} alt="" className="profile"/>
         <input type="text" className="customInput" value={getItemByKey("nickName")}/>
         <input type="text" className="customInput" value={getItemByKey("email")}/>
+        <button className="snsButton black">수정하기</button>
         <button className="snsButton primary" onClick={confirmLogout}>로그아웃</button>
       </div>
       <BottomMenu activeMenu="mypage"/>

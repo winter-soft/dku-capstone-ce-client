@@ -61,6 +61,11 @@ a {
     background-color: var(--color-naver);
 }
 
+.black {
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+
 .primary {
     color: var(--color-white);
     background-color: var(--color-primary);
