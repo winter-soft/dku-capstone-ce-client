@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import '../css/Main.css';
 import Header from "../components/common/Header";
 import BottomMenu from "../components/common/BottomMenu";
@@ -6,26 +6,9 @@ import Slider from "../components/main/Slider";
 import RoundButton from "../components/common/RoundButton";
 import AroundJob from "../components/main/AroundJob";
 import CurrentJob from "../components/main/CurrentJob";
-import {announceAPI, tokenValid} from "../fetch";
-import {getItemByKey, saveUserToSession} from "../common";
 import RecommendJob from "../components/main/RecommendJob";
 
 const Main = () => {
-  useEffect(() => {
-    const token = getItemByKey('token');
-
-    const saveUser = async (token) => {
-      return await tokenValid(token);
-    }
-
-    saveUser(token)
-      .then(response => {
-        saveUserToSession(response);
-        console.log(announceAPI(token, 2));
-      });
-
-  }, []);
-
   return (
     <div className="App">
       <Header hideBackBtn={true}/>

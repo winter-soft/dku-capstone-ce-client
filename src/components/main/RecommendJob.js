@@ -13,7 +13,7 @@ const RecommendJob = ({title}) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await announceListAPI(token, "RECRUIT");
+        const response = await announceListAPI("RECRUIT");
         setAnnouncement(response.data.content);
       } catch (error) {
         console.error(error);

@@ -15,7 +15,7 @@ const Job = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await announceAPI(token, getIdFromUrl());
+        const response = await announceAPI(getIdFromUrl());
         setAnnouncement(response.data);
       } catch (error) {
         console.error(error);

@@ -13,7 +13,7 @@ const InterestJob = ({title}) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await announceListAPI(token, "CLASS");
+        const response = await announceListAPI("CLASS");
         setAnnouncement(response.data.content);
       } catch (error) {
         console.error(error);

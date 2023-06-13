@@ -1,4 +1,5 @@
 import axios from "axios";
+import {getItemByKey} from "./common";
 
 const API_BASE_URL = 'https://jubujob.com/api/v1';
 
@@ -30,22 +31,23 @@ export const tokenValid = (token) => {
   });
 };
 
-export const jobPreferenceAPI = (token) => {
-  return ApiMethodGET('/job/preference/', "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRU5URVJQUklTRSIsImlkIjoiNSIsInN1YiI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE2ODYxMDI2NDYsImV4cCI6MTY4NjEyNDI0Nn0.EQ6BXddGhHf-K6n4Euklj6WaoMp6go0CMlK4k2WJYkA");
+export const jobPreferenceAPI = () => {
+  return ApiMethodGET('/job/preference/');
 }
 
-export const announceListAPI = (token, type) => {
-  return ApiMethodGET(`/announce/?type=${type}`, "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRU5URVJQUklTRSIsImlkIjoiNSIsInN1YiI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE2ODYxMDI2NDYsImV4cCI6MTY4NjEyNDI0Nn0.EQ6BXddGhHf-K6n4Euklj6WaoMp6go0CMlK4k2WJYkA");
+export const announceListAPI = (type) => {
+  return ApiMethodGET(`/announce/?type=${type}`);
 }
 
-export const announceAPI = (token, id) => {
-  return ApiMethodGET(`/announce/${id}`, "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRU5URVJQUklTRSIsImlkIjoiNSIsInN1YiI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE2ODYxMDI2NDYsImV4cCI6MTY4NjEyNDI0Nn0.EQ6BXddGhHf-K6n4Euklj6WaoMp6go0CMlK4k2WJYkA");
+export const announceAPI = (id) => {
+  return ApiMethodGET(`/announce/${id}`);
 }
 
-export const ApiMethodGET = (url, token) => {
+export const ApiMethodGET = (url) => {
+  const token = getItemByKey("token");
   return axios.get(`${API_BASE_URL}${url}`, {
     headers: {
-      "Authorization": `Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRU5URVJQUklTRSIsImlkIjoiNSIsInN1YiI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE2ODYxMDI2NDYsImV4cCI6MTY4NjEyNDI0Nn0.EQ6BXddGhHf-K6n4Euklj6WaoMp6go0CMlK4k2WJYkA`
+      "Authorization": `Bearer ${token}`
     }
   });
 }
