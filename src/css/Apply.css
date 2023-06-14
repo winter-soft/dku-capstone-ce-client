@@ -63,6 +63,15 @@
     margin-top: 15px;
 }
 
+.applyBox img {
+    width: 121%;
+    box-sizing: border-box;
+    position: relative;
+    right: 25px;
+    border-radius: 5px 5px 0 0;
+    bottom: 20px;
+}
+
 .applyBox.active {
     background-color: var(--color-primary);
     color: var(--color-white);

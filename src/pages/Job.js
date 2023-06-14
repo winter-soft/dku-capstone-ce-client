@@ -30,6 +30,7 @@ const Job = () => {
     const queryParams = new URLSearchParams(location.search);
     return queryParams.get('id');
   }
+  
 
   return (
     <div className="App">

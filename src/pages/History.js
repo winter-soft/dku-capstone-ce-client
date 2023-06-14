@@ -2,15 +2,15 @@ import React from "react";
 import '../css/Job.css';
 import Header from "../components/common/Header";
 import BottomMenu from "../components/common/BottomMenu";
-import CenterText from "../components/common/CenterText";
 import Loading from "../components/common/Loading";
+import ApplyImageBox from "../components/apply/ApplyImageBox";
 
 const History = () => {
   return (
     <div className="App">
       <Loading/>
       <Header/>
-      <CenterText text="회사에 지원하신 내역이 없습니다."/>
+      <ApplyImageBox title={"안양 KCC 스위첸 아파트 입주관리매니저 지원"} date={"2023.06.14"} imgUrl={"/img/test/6.jpg"}/>
       <BottomMenu activeMenu="history"/>
     </div>
   );
